@@ -4,7 +4,7 @@ const path=require("path");
 const port=8080;
 
 app.listen(port,()=>{
-    console.log(`app listens on ${port}`);
+    console.log(`app listens on : ${port}`);
 })
 
 app.set("view engine","ejs");
