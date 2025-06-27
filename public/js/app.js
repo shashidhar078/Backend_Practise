@@ -4,5 +4,5 @@ for(btn of btns)
 {
     btn.addEventListener("click",()=>{
         console.log("button clicked!!!");
-    })
+    });
 }
