@@ -11,6 +11,11 @@ app.listen(port,(req,res)=>{
 app.get("/",(req,res)=>{
     res.send("Welcome to home");
 });
+ 
+app.set("view engine","ejs");
+app.set("views",path.join(__dirname,"/views"));
+
+app.use(express.static("public"));
 
 app.get("/ig/:username",(req,res)=>{
     let {username}=req.params;
@@ -20,11 +25,11 @@ app.get("/ig/:username",(req,res)=>{
     console.log(data);
     if(data)
     {
-        res.render("InstaActivity.ejs",{username,followers,data});
+        res.render("InstaActivity",{username,followers,data});
     }
     else
     {
-        res.render("error.ejs");
+        res.render("error");
     }
     
 })
